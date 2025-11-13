@@ -260,19 +260,171 @@ section {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.about-text p {
+.about-content p {
     margin-bottom: 1.5rem;
     color: var(--text-light);
     line-height: 1.8;
     text-align: justify;
+    font-size: 1.05rem;
+    text-indent: 0;
 }
 
+/* ==========================================
+   EDUCATION SECTION
+   ========================================== */
+
+.education {
+    background: var(--bg-white);
+}
+
+.education-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.education-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.education-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.education-icon i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.education-content {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    flex-grow: 1;
+    transition: var(--transition);
+}
+
+.education-content:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-color);
+}
+
+.education-date {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.education-content h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.education-content h4 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.education-location {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.education-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.education-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.highlight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 6px 14px;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.highlight-tag i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .education-timeline::before {
+        left: 30px;
+    }
+    
+    .education-item {
+        gap: 1rem;
+    }
+    
+    .education-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .education-icon i {
+        font-size: 1.4rem;
+    }
+    
+    .education-content {
+        padding: 1.5rem;
+    }
+}
 
 /* ==========================================
    PROJECTS SECTION
